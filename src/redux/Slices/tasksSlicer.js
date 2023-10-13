@@ -42,11 +42,18 @@ const tasksSlice = createSlice({
     },
     [deleteTask.fulfilled](state, action) {
       state.isLoading = false;
-      state.error = null;
       const index = state.items.findIndex(
-        (task) => task.id === action.payload.id
+        (item) => item.id === action.payload.id
       );
       state.items.splice(index, 1);
+      // state.error = null;
+      // state.items.forEach((item) => {
+      //   return item.id !== action.payload.id;
+      // });
+      // const index = state.items.findIndex(
+      //   (task) => task.id === action.payload.id
+      // );
+      // state.items.splice(index, 1);
     },
     // state.items.filter((item) => item.id !== action.payload.id);
 
