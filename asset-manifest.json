@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/lesson_13_async_redux/static/css/main.1570f2e1.css",
+    "main.js": "/lesson_13_async_redux/static/js/main.05044114.js",
+    "index.html": "/lesson_13_async_redux/index.html",
+    "main.1570f2e1.css.map": "/lesson_13_async_redux/static/css/main.1570f2e1.css.map",
+    "main.05044114.js.map": "/lesson_13_async_redux/static/js/main.05044114.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1570f2e1.css",
+    "static/js/main.05044114.js"
+  ]
+}
