@@ -9,8 +9,6 @@ const TaskForm = () => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
     const text = ev.target.elements.text.value;
-    // console.log(ev.target.elements.text.value);
-    // dispatch(addTask(ev.target.elements.text.value));
     dispatch(addTask(text));
     ev.target.reset();
   };

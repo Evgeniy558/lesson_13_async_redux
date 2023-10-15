@@ -14,7 +14,6 @@ const TaskCounter = () => {
     },
     { active: 0, completed: 0 }
   );
-  console.log(taskCount);
   return (
     <>
       <p className={css.text}>Activ: {taskCount.active}</p>

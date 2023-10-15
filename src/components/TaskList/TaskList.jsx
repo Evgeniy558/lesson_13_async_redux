@@ -1,10 +1,13 @@
 import { useSelector } from "react-redux";
 import Task from "../Task/Task";
-import { getFilter, getTasks } from "../../redux/filters/selectors";
+import {
+  getFilter,
+  getIsLoading,
+  getTasks,
+} from "../../redux/filters/selectors";
 import css from "./TaskList.module.css";
 
 const getVisibleTasks = (tasks, statusFilter) => {
-  console.log("statusFilter", statusFilter);
   const taskList =
     statusFilter === "active"
       ? tasks.filter((task) => !task.completed)
@@ -16,17 +19,19 @@ const getVisibleTasks = (tasks, statusFilter) => {
 
 const TaskList = () => {
   const tasks = useSelector(getTasks);
+  const isLoading = useSelector(getIsLoading);
   const statusFilter = useSelector(getFilter);
   const visibleTasks = getVisibleTasks(tasks, statusFilter);
   return (
     <>
-      {visibleTasks.map((task) => {
-        return (
-          <li key={task.id} className={css.elItem}>
-            <Task task={task}></Task>
-          </li>
-        );
-      })}
+      {!isLoading &&
+        visibleTasks.map((task) => {
+          return (
+            <li key={task.id} className={css.elItem}>
+              <Task task={task}></Task>
+            </li>
+          );
+        })}
     </>
   );
 };
